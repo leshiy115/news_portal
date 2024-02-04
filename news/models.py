@@ -13,6 +13,26 @@ class Author(models.Model):
     rating = models.IntegerField(default=0)
 
 
+    def update_rating(self) -> None:
+        """Метод обновляет рейтинг текущего автора"""
+
+        # суммарный рейтинг каждой статьи автора умножается на 3;
+        post_ratings = 0
+        # суммарный рейтинг всех комментариев к статьям автора.
+        post_comments = 0
+        for post in self.post_set.all():
+            post_ratings += post.rating
+            for comment in post.comment_set.all():
+                post_comments += comment.rating
+
+        # суммарный рейтинг всех комментариев автора;
+        comments_rating = 0
+        for comment in Comment.objects.filter(user=self.user):
+            comments_rating += comment.rating
+
+        self.rating = post_ratings * 3 + comments_rating + post_comments
+        self.save()
+
 
 class Category(models.Model):
     """2. Категории новостей/статей — темы, которые они отражают (спорт, политика, образование и т. д.)."""
@@ -23,11 +43,11 @@ class Category(models.Model):
 class Post(models.Model):
     """3. Эта модель должна содержать в себе статьи и новости, которые создают пользователи. Каждый объект может иметь одну или несколько категорий."""
     # поле с выбором — «статья» или «новость»;
-    post = 'P'
+    article = 'A'
     news = 'N'
-    POSITIONS = [(post, 'Статья'),
+    POSITIONS = [(article, 'Статья'),
                  (news, 'Новости')]
-    position = models.CharField(max_length=1, choices=POSITIONS, default=post)
+    post_type = models.CharField(max_length=1, choices=POSITIONS, default=article)
     # автоматически добавляемая дата и время создания;
     time_created = models.DateTimeField(auto_now_add=True)
     # заголовок статьи/новости;
@@ -42,6 +62,19 @@ class Post(models.Model):
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
     category = models.ManyToManyField('Category', through='PostCategory')
 
+    def like(self) -> None:
+        self.rating += 1
+        self.save()
+
+    def dislike(self) -> None:
+        self.rating -= 1
+        self.save()
+
+    def preview(self) -> str:
+        text = self.text[:125]
+        if len(text) > 125:
+            text += '...'
+        return text
 
 
 class PostCategory(models.Model):
@@ -66,4 +99,13 @@ class Comment(models.Model):
     # связь «один ко многим» со встроенной моделью User (комментарии может оставить любой пользователь, необязательно автор);
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def like(self) -> None:
+        self.rating += 1
+        self.save()
 
+    def dislike(self) -> None:
+        self.rating -= 1
+        self.save()
+
+
+# from news.models import *

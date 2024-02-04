@@ -22,4 +22,4 @@ if __name__ == '__main__':
     main()
 
 # admin == admin | pass == admin
-# all user is user1, user2 ... | all pass == adminadmin
+# all user is user1, user2 ... | all pass == admin or == admiadmin если создавался через админку.
