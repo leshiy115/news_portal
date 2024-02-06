@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+Посты
+{% endblock title %}
+
+{% block content %}
+  <body>
+    <h1>Все статьи</h1>
+    <hr>
+    {% if posts %}
+      {% for post in posts %}
+        <h3>{{ post.title | censor }}</h3>(post.pk={{ post.pk }})
+        <p>Опубликовано: {{ post.time_created | date:'d M Y' }}</p>
+        {{ post.preview | censor }}
+        <hr>
+      {% endfor %}
+    {% else %}
+      <h2>На сайте не опубликовано ни одной статьи</h2>
+    {% endif %}
+  </body>
+{% endblock content %}
+

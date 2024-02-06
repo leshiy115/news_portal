@@ -1,5 +1,6 @@
 import random
 from news.models import *
+from django.contrib.auth.models import User
 
 """Файл всех команд, запускаемых в Django shell.
 Сделал немного по своему, так как мне еще понадобятся эти команды для наполнения бд."""
@@ -104,3 +105,18 @@ for comment in all_comments:
     username = comment['user__username']
     date = comment['time_created']
     print(f"{username}:\n   {text}\nRating={rating}. {date.strftime('%A, %d. %B %Y %I:%M%p')}")
+
+###########
+
+mat = 'Ублюдок, мать твою, а ну, иди сюда, говно собачье, а? Что, сдуру решил ко мне лезть? Ты, засранец вонючий, ' \
+      'мать твою, а? Ну, иди сюда, попробуй меня трахнуть – я тебя сам трахну, ублюдок, онанист чертов, будь ты проклят!' \
+      ' Иди, идиот, трахать тебя и всю твою семью! Говно собачье, жлоб вонючий, дерьмо, сука, падла! Иди сюда, мерзавец,' \
+      ' негодяй, гад! Иди сюда, ты, говно, жопа! '
+
+p = Post.objects.create(title="For ValueError Except",
+            text=66666666,
+            author=User.objects.get(pk=1).author,
+            post_type='P',
+            rating=0,)
+p.add_category()
+

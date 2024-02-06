@@ -1,0 +1,21 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+Статья
+{% endblock title %}
+
+{% block content %}
+  <body>
+    <h1>{{ post.title | censor }}</h1>
+    <p>Дата публикации: {{ post.time_created | date:'d M Y' }}</p>
+    <hr>
+
+    {% if post.text %}
+      <p>{{ post.text | censor }}</p>
+    {% else %}
+      <h3>Текст отсутствует</h3>
+    {% endif %}
+    <p>Рейтинг: {{ post.rating }}</p>
+  </body>
+{% endblock content %}

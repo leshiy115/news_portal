@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -35,13 +36,15 @@ class Author(models.Model):
 
 
 class Category(models.Model):
-    """2. Категории новостей/статей — темы, которые они отражают (спорт, политика, образование и т. д.)."""
+    """2. Категории новостей/статей — темы, которые они отражают
+    (спорт, политика, образование и т. д.)."""
     name = models.CharField(max_length=20, unique=True)
 
 
 
 class Post(models.Model):
-    """3. Эта модель должна содержать в себе статьи и новости, которые создают пользователи. Каждый объект может иметь одну или несколько категорий."""
+    """3. Эта модель должна содержать в себе статьи и новости, которые создают пользователи.
+    Каждый объект может иметь одну или несколько категорий."""
     # поле с выбором — «статья» или «новость»;
     article = 'A'
     news = 'N'
@@ -71,10 +74,23 @@ class Post(models.Model):
         self.save()
 
     def preview(self) -> str:
-        text = self.text[:125]
-        if len(text) > 125:
+        text = self.text[:20]
+        if len(text) == 20:
             text += '...'
         return text
+
+    def add_category(self, category_name: str = None) -> None:
+        """Если пост не подходит ни к одной категории можно создать свою
+        и связь данный пост с ней"""
+        category = Category.objects.create(name=category_name)
+        if not category:
+            category = Category.objects.get(name='Без категории')
+            PostCategory.objects.create(category=category, post=self)
+        else:
+            category = Category.objects.get(pk=category)
+            PostCategory.objects.create(category=category, post=self)
+
+
 
 
 class PostCategory(models.Model):
