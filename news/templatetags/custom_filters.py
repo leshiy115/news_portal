@@ -25,6 +25,9 @@ def censor(text: str) -> str:
                         edited.append(word)
                     word = ''
                     edited.append(letter)
+            if word:
+                edited.append(word)
+
             for i, w in enumerate(edited):
                 if w[0].isalpha():
                     if w[0] in json_in:
@@ -36,8 +39,17 @@ def censor(text: str) -> str:
         print('Terminal message:\n'
               'From censor news.templatetags.custom_filters\n'
               'Error == ', e)
-    finally:
         return text
+
+
+
+
+@register.filter()
+def value_check(value):
+    text = f"value = {value}, type = {type(value)}"
+    return text
+
+
 
 
 

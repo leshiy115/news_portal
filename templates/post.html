@@ -7,8 +7,16 @@
 
 {% block content %}
   <body>
-    <h1>{{ post.title | censor }}</h1>
-    <p>Дата публикации: {{ post.time_created | date:'d M Y' }}</p>
+    <h1>{{ post.title }}</h1>
+    <p>Автор: {{ post.author.user.username | censor}}  Дата публикации: {{ post.time_created | date:'d M Y' }}</p>
+    <p>Категории:
+      {% for cat in post.category.all %}
+        <span> {{ cat.name }} </span>
+      {% endfor %}
+    </p>
+
+    <p>post_type == {{ post.post_type }}</p>
+
     <hr>
 
     {% if post.text %}
@@ -16,6 +24,7 @@
     {% else %}
       <h3>Текст отсутствует</h3>
     {% endif %}
+
     <p>Рейтинг: {{ post.rating }}</p>
   </body>
 {% endblock content %}

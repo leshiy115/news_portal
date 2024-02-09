@@ -23,24 +23,21 @@ for cat in cats:
 
 # 4. Добавить 2(много) статей и 1 (много) новостей.
 p_types = ['P', 'N']
+cats = Category.objects.all()
 for user in User.objects.all():
-    for i in range(random.randint(2, 7)):
-        Post.objects.create(title=f"Post №{i}. Author: {user.username}",
+    for i in range(6):
+        i = i + 8
+        p = Post.objects.create(title=f"Post №{i}. Author: {user.username}",
                             text=f"User={user.username} for post №{i} text №{i}",
                             author=user.author,
                             post_type=random.choices(p_types)[0],  # если не указать индекс 0 вернет list
                             rating=random.randint(0, 30))
+        p.add_category(category_name=random.choices(cats)[0].name)
 
-
-# 5 Создание связей между Post и Category
-posts = Post.objects.all()
-cats = Category.objects.all()
-for post in posts:
-    PostCategory.objects.create(category=random.choices(cats)[0], post=post)
 
 # добавление еще одной случайной категории к случайному посту
 posts = Post.objects.all()
-rand_posts = [random.choices(posts)[0] for _ in range(6)]
+rand_posts = [random.choices(posts)[0] for _ in range(8)]
 for post in rand_posts:  # для 3-х случайных постов выбрать еще одну случайною категорию
     p_category = post.category.get()  # находим категорию, которая есть
     cats = list(Category.objects.all())
@@ -51,7 +48,7 @@ for post in rand_posts:  # для 3-х случайных постов выбр�
 # 6. Создать как минимум 4 комментария к разным объектам модели Post
 # (в каждом объекте должен быть как минимум один комментарий).
 
-posts = Post.objects.all()
+posts = Post.objects.filter(pk > 22)
 for user in User.objects.all():
     # каждый юзер оставляет случайное количество комментов на случайном посте
     for i in range(random.randint(4, 10)):

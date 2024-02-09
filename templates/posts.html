@@ -1,0 +1,76 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+{% block title %}
+  Посты
+{% endblock title %}
+
+
+{% block content %}
+  <body>
+  <h1>Все статьи</h1>
+
+
+  {# Filtersts #}
+  {% if filterset %}
+   <form action="" method="get">
+       {# Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями #}
+       {{ filterset.form.as_p }}
+       {# Добавим кнопку отправки данных формы #}
+       <input type="submit" value="Найти" />
+   </form>
+  {% endif %}
+
+  <hr>
+
+  {% if posts %}
+    {% for post in posts %}
+      <h3>{{ post.title }}</h3>(post.pk={{ post.pk }})
+      <p>Автор: {{ post.author.user.username | censor }} (дата: {{ post.time_created | date:'d M Y' }})</p>
+      <p>Категории:
+        {% for cat in post.category.all %}
+          <span> {{ cat.name }} </span>
+        {% endfor %}
+      </p>
+      <p>post_type == {{ post.post_type }}</p>
+      {{ post.preview | censor }}
+      <hr>
+    {% endfor %}
+  {% else %}
+    <h2>На сайте не опубликовано ни одной статьи</h2>
+  {% endif %}
+
+  {#    Пагинатор  #}
+  <div align="center">
+    <h3>
+      {% if page_obj.has_previous %}
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">&lt;&lt;Назад &nbsp</a>
+  {#          <a href="?page=1">1</a>#}
+            <a href="?{% url_replace page=1 %}">1</a>
+        {% if page_obj.previous_page_number != 1 %}
+          ...
+          <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+      {% endif %}
+
+      {{ page_obj.number }}
+
+      {% if page_obj.has_next %}
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+
+        {% if paginator.num_pages != page_obj.next_page_number %}
+          ...
+          <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+          <a href="?{% url_replace page=page_obj.next_page_number %}">&nbsp Вперед&gt;&gt;</a>
+        {% endif %}
+      {% endif %}
+    </h3>
+  </div>
+
+  </body>
+{% endblock content %}
+
