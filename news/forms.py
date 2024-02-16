@@ -36,7 +36,6 @@ class PostForm(forms.ModelForm):
 class BasicSignupForm(SignupForm):
     """Форма дополняющая регистрационную форму allauth новыми полями.
     Необходимо прописать путь в настройкахACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}"""
-    print(f"\nСРАБОТАЛ  BasicSignupForm \n")
     email = forms.EmailField(label="Email")
     first_name = forms.CharField(label="Имя")
     last_name = forms.CharField(label="Фамилия")
