@@ -11,6 +11,9 @@
 {% block content %}
   <body>
   <h1>Все статьи</h1>
+  <h3><a href="/news/search/">Поиск</a></h3>
+  <h3><a href="/news/create/">Написать новость</a></h3>
+  <h3><a href="/articles/create/">Написать статью</a></h3>
 
 
   {# Filtersts #}
@@ -27,7 +30,7 @@
 
   {% if posts %}
     {% for post in posts %}
-      <h3>{{ post.title }}</h3>(post.pk={{ post.pk }})
+      <h3><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a></h3>(post.pk={{ post.pk }})
       <p>Автор: {{ post.author.user.username | censor }} (дата: {{ post.time_created | date:'d M Y' }})</p>
       <p>Категории:
         {% for cat in post.category.all %}

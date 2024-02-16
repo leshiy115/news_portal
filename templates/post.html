@@ -2,7 +2,11 @@
 {% load custom_filters %}
 
 {% block title %}
-Статья
+  {% if post.post_type == "N" %}
+    Новость
+  {% else %}
+    Статья
+  {% endif %}
 {% endblock title %}
 
 {% block content %}
@@ -15,7 +19,14 @@
       {% endfor %}
     </p>
 
-    <p>post_type == {{ post.post_type }}</p>
+    <p>
+      post_type ==
+      {% if post.post_type == "N" %}
+        Новость
+      {% else %}
+        Статья
+      {% endif %}
+    </p>
 
     <hr>
 
@@ -24,6 +35,12 @@
     {% else %}
       <h3>Текст отсутствует</h3>
     {% endif %}
+    <p>
+      <a href="/news/{{ post.pk }}/edit/">Редактировать</a>
+      |
+      <a href="/news/{{ post.pk }}/delete/">Удалить</a>
+    </p>
+
 
     <p>Рейтинг: {{ post.rating }}</p>
   </body>

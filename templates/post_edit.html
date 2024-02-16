@@ -1,7 +1,14 @@
 {% extends 'default.html' %}
 
 {% block content %}
-<h1>Новость</h1>
+<h1>
+{% if post_type == "n"%}
+  Новость
+{% else %}
+  Статья
+{% endif %}
+
+</h1>
 <hr>
 <form action="" method="post">
     {% csrf_token %}

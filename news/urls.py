@@ -1,7 +1,8 @@
 from django.urls import path
 # Импортируем созданное нами представление
 from .views import (PostsList, PostDetail, PostCreate,
-                    PostUpdate, ArticlesDelete, NewsDelete)
+                    PostUpdate, PostDelete,
+                    UserDetail, upgrade_me)
 
 #todo После сдачи задания удалить лишнее.
 urlpatterns = [
@@ -11,6 +12,7 @@ urlpatterns = [
    path('articles/', PostsList.as_view(), name='articles'),
    path('articles/search/', PostsList.as_view(), name='articles_search'),
 
+   #todo заменить на post/int
    path('news/<int:pk>/', PostDetail.as_view(), name='news_detail'),
    path('articles/<int:pk>/', PostDetail.as_view(), name='articles_detail'),
 
@@ -20,7 +22,10 @@ urlpatterns = [
    path('news/<int:pk>/edit/', PostUpdate.as_view(), name='news_edit'),
    path('articles/<int:pk>/edit/', PostUpdate.as_view(), name='articles_edit'),
 
-   path('news/<int:pk>/delete/', NewsDelete.as_view(), name='news_delete'),
-   path('articles/<int:pk>/delete/', ArticlesDelete.as_view(), name='articles_delete'),
+   path('news/<int:pk>/delete/', PostDelete.as_view(), name='news_delete'),
+
+   path('user_profile/<int:pk>/', UserDetail.as_view(), name='user_profile'),
+   path('upgrade/', upgrade_me, name='upgrade'),
+
 ]
 

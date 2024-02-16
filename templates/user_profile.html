@@ -1,0 +1,46 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+{{ user.username | capfirst }}
+{% endblock title %}
+
+{% block content %}
+  <body>
+    <h1>{{ user.username }}</h1>
+    <p>Имя:
+      {% if user.first_name %}
+        {{ user.first_name | capfirst}}
+      {% else %}
+        .......
+      {% endif %}
+    </p>
+    <p>Фамилия:
+      {% if user.last_name %}
+        {{ user.last_name | capfirst}}
+      {% else %}
+        .......
+      {% endif %}
+    </p>
+    <p>
+      Почта: {{ user.email }}
+    </p>
+    <p>
+      Уровень доступа:
+      {% if is_not_premium %}
+        Вы не автор! Вам доступен просмотр и комментирование статей. Если хотите стать автором перейдите по
+        <a href="/upgrade/">ссылке.</a>
+      {% else %}
+        Вам доступно: создание, редактирование и комментирование статей.
+      {% endif %}
+    </p>
+    <p>
+      <a href="{% url 'account_change_password' %}">Сменить пароль</a>
+    </p>
+    <p>
+      <a href="{% url 'account_email' %}">Изменить Почту</a>
+    </p>
+  </body>
+{% endblock content %}
+
+
