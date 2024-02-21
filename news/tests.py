@@ -1,5 +1,9 @@
-path = 'ews/23/delete/'
+from datetime import datetime, timedelta
+import pytz
+from django.utils import timezone
 
-print('news/' in path)
+today = timezone.now()
+week_before = today - timedelta(days=7)
+posts = Post.objects.filter(time_created__range=(week_before, today))
 
 

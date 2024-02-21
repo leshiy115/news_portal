@@ -2,7 +2,7 @@ from django.urls import path
 # Импортируем созданное нами представление
 from .views import (PostsList, PostDetail, PostCreate,
                     PostUpdate, PostDelete,
-                    UserDetail, upgrade_me)
+                    UserDetail, upgrade_me, Subscriptions)
 
 #todo После сдачи задания удалить лишнее.
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
 
    path('user_profile/<int:pk>/', UserDetail.as_view(), name='user_profile'),
    path('upgrade/', upgrade_me, name='upgrade'),
+   path('user_profile/<int:pk>/subscriptions/', Subscriptions.as_view(), name='subscriptions'),
 
 ]
 

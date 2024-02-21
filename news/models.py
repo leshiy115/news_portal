@@ -12,6 +12,10 @@ class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     # рейтинг пользователя.
     rating = models.IntegerField(default=0)
+    subscriptions = models.ManyToManyField('Category', through='Subscribers', verbose_name='Категории в подписке')
+
+    def __str__(self):
+        return self.user.username
 
 
     def update_rating(self) -> None:
@@ -34,14 +38,27 @@ class Author(models.Model):
         self.rating = post_ratings * 3 + comments_rating + post_comments
         self.save()
 
+    def get_absolute_url(self):
+        return reverse('user_profile', args=[str(self.user.id)])
+
 
 class Category(models.Model):
     """2. Категории новостей/статей — темы, которые они отражают
     (спорт, политика, образование и т. д.)."""
     name = models.CharField(max_length=20, unique=True)
+    subs = models.ManyToManyField('Author', through="Subscribers")
+
 
     def __str__(self):
         return f"{self.name.capitalize()}"
+
+
+class Subscribers(models.Model):
+    """Модель для подписки на категорию"""
+
+    author = models.ForeignKey('Author', on_delete=models.CASCADE)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+
 
 
 
@@ -67,6 +84,8 @@ class Post(models.Model):
     author = models.ForeignKey('Author', null=True, on_delete=models.CASCADE)
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
     category = models.ManyToManyField('Category', through='PostCategory')
+
+
 
     def like(self) -> None:
         self.rating += 1
@@ -105,6 +124,11 @@ class Post(models.Model):
             return reverse('news_detail', args=[str(self.id)])
 
 
+    def __str__(self):
+        return self.title
+
+
+
 class PostCategory(models.Model):
     """4. Промежуточная модель для связи «многие ко многим»:"""
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
@@ -137,4 +161,12 @@ class Comment(models.Model):
 
 
 
-# from news.models import *
+
+
+# # from news.models import *
+
+
+
+
+
+

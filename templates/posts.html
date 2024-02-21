@@ -8,13 +8,19 @@
 {% endblock title %}
 
 
-{% block content %}
+{% block posts_content %}
   <body>
   <h1>Все статьи</h1>
   <h3><a href="/news/search/">Поиск</a></h3>
   <h3><a href="/news/create/">Написать новость</a></h3>
   <h3><a href="/articles/create/">Написать статью</a></h3>
-
+  {% if request.user.is_authenticated %}
+  <p>Если хотите оформить подписку на определенную категорию пройдите в
+    <a href="{% url 'user_profile' request.user.id %}">личный кабинет</a>.
+  </p>
+  {% else %}
+    <p>Если хотите оформить подписку на определенную категорию пройдите в личный кабинет.</p>
+  {% endif %}
 
   {# Filtersts #}
   {% if filterset %}
@@ -75,5 +81,5 @@
   </div>
 
   </body>
-{% endblock content %}
+{% endblock posts_content %}
 

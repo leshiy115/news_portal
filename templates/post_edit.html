@@ -1,6 +1,6 @@
 {% extends 'default.html' %}
 
-{% block content %}
+{% block posts_content %}
 <h1>
 {% if post_type == "n"%}
   Новость
@@ -10,9 +10,15 @@
 
 </h1>
 <hr>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
-</form>
-{% endblock content %}
+  {% if form %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+  {% else %}
+    <h1>Вы превысили лимит! (не более 3-х постов за день)</h1>
+    <h2>Создание поста будет доступно на следующий день по UTC.</h2>
+  {% endif %}
+
+{% endblock posts_content %}

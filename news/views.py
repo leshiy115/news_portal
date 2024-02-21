@@ -1,11 +1,12 @@
 from datetime import datetime
 from pprint import pprint
 
+import requests
 from django.utils import timezone
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic import (ListView, DetailView, CreateView,
-                                  UpdateView, DeleteView)
+                                  UpdateView, DeleteView, View)
 from django.contrib.auth.models import User, AnonymousUser
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
@@ -14,9 +15,10 @@ from django.shortcuts import redirect
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
+
 from .models import Category, Post, Author, PostCategory, Comment
 from .filters import PostFilter
-from .forms import PostForm
+from .forms import PostForm, SubscriptionsForm
 
 
 
@@ -36,15 +38,12 @@ class PostsList(ListView):
 
         if 'news/' in self.request.path:
             queryset = queryset.filter(post_type="N")
-            print('queryset = N')
 
         if 'articles/' in self.request.path:
             queryset = queryset.filter(post_type="A")
-            print('queryset = A')
 
         if 'search/' in self.request.path:
             self.filterset = PostFilter(self.request.GET, queryset)
-            print('RETURNING WITH SEARCH')
             return self.filterset.qs
 
         return queryset
@@ -66,7 +65,6 @@ class PostDetail(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        pprint(context)
         return context
 
 
@@ -82,6 +80,7 @@ class UserDetail(LoginRequiredMixin, DetailView):
         return context
 
 
+
 def upgrade_me(request):
     """Изменение уровня доступа через профиль"""
     user = request.user
@@ -91,9 +90,11 @@ def upgrade_me(request):
     return redirect(f'/user_profile/{user.pk}')
 
 
+# class Subscribe(LoginRequiredMixin, CreateView):
+
 
 class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
-    permission_required = ('news.add_post')
+    permission_required = 'news.add_post'
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -101,8 +102,12 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
 
     def form_valid(self, form):
         post = form.save(commit=False)
-        # проверяем запрос идет из новостей или постов
         path = self.request.path
+        print(self.request.POST)
+        if not check_user_limit(self.request.user):
+            return redirect('all_posts')
+
+
         if 'news/' in path:
             post.post_type = "N"
         elif 'articles/' in path:
@@ -117,19 +122,27 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
         else:
             post.author = self.request.user.author
 
+
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post_type'] = self.request.path[1]
-        print(self.request.path[1])
 
-        return context
+        # Проверка на лимит для юзера. Если лимит превышен
+        # форма в контексте обнуляется и шаблон выдает сообщение о превышении лимита.
+        if check_user_limit(self.request.user):
+            context['post_type'] = self.request.path[1]
+            return context
+        else:
+            context['form'] = None
+            return context
+
+
 
 
 
 class PostUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
-    permission_required = ('news.change_post')
+    permission_required = 'news.change_post'
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -141,8 +154,6 @@ class PostUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
         return context
 
 
-# пришлось написать 2 отдельных вьюшки для удаления. так меньше кода.
-# Разница лишь в пути реверса. Потом можно удалить и отправлять на общую.
 class PostDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post')
     model = Post
@@ -150,8 +161,32 @@ class PostDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     success_url = reverse_lazy('all_posts')
 
 
+class Subscriptions(LoginRequiredMixin, UpdateView):
+    form_class = SubscriptionsForm
+    model = Author
+    template_name = 'subscriptions.html'
 
 
+def check_user_limit(user):
+    """Проверка юзеров на превышение лимита на создание постов.
+    Лимит == 3 в день по UTC"""
+    from datetime import datetime
+    import pytz
+    author = user.author
 
+    # только у первого админа нет лимита на создание постов.
+    if user.pk == 1:
+        return True
+
+    same_day = 0
+    last3 = author.post_set.order_by('-time_created')[:3].values_list('time_created')
+    for time_created in last3:
+        day = time_created[0].date()
+        if day == datetime.now(pytz.utc).date():
+            same_day += 1
+    if same_day >= 3:
+        return False
+    else:
+        return True
 
 

@@ -1,0 +1,20 @@
+{% extends 'default.html' %}
+
+{% block title %}
+  Подписки
+{% endblock title %}
+
+{% block posts_content %}
+  <h1>
+    Ваши подписки
+  </h1>
+
+  <hr>
+
+  <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+  </form>
+
+{% endblock posts_content %}

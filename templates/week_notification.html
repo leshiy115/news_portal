@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <h3>
+    {{ user.username | capfirst }}, для Вас создан список новых постов за неделю в интересующих Вас категориях:
+  </h3>
+
+  <ul>
+
+    {% for post in posts %}
+      <li>
+        <a href="http://127.0.0.1:8000/news/{{ post.pk }}/">{{ post.title | capfirst }}</a>
+        ({% for cat in post.category.all %}{{ cat.name | capfirst }} {% endfor %})
+      </li>
+    {% endfor %}
+
+  </ul>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>{{ user.username | capfirst }}, Вам это может быть интересно!</h2>
+  <h3>Оповещение о выходе нового поста в категориях:
+    {% for category in post.category.all %}
+      {{ category.name }}
+    {% endfor %}
+  </h3>
+  <p>Название: <a href="http://127.0.0.1:8000/news/{{ post.pk }}/">{{ post.title | capfirst }}</a></p>
+  <p>Автор {{ post.author.user.username | capfirst}}</p>
+  <hr>
+  <p>Текст: {{ post.text | truncatechars:50 }}</p>
+
+</body>
+</html>

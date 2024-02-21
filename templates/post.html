@@ -9,7 +9,7 @@
   {% endif %}
 {% endblock title %}
 
-{% block content %}
+{% block posts_content %}
   <body>
     <h1>{{ post.title }}</h1>
     <p>Автор: {{ post.author.user.username | censor}}  Дата публикации: {{ post.time_created | date:'d M Y' }}</p>
@@ -35,13 +35,16 @@
     {% else %}
       <h3>Текст отсутствует</h3>
     {% endif %}
+
+
+    {% if request.user == post.author.user %}
     <p>
       <a href="/news/{{ post.pk }}/edit/">Редактировать</a>
       |
       <a href="/news/{{ post.pk }}/delete/">Удалить</a>
     </p>
-
+    {% endif %}
 
     <p>Рейтинг: {{ post.rating }}</p>
   </body>
-{% endblock content %}
+{% endblock posts_content %}
