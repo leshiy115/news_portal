@@ -163,10 +163,11 @@ class Comment(models.Model):
 
 
 
-# # from news.models import *
+# from news.models import *
 
-
-
+# celery -A news_portal control shutdown
+# celery -A news_portal worker -l INFO --pool=gevent --concurrency=8
+# celery -A news_portal beat -l INFO
 
 
 

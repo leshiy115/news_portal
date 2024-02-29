@@ -19,7 +19,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from .models import Category, Post, Author, PostCategory, Comment
 from .filters import PostFilter
 from .forms import PostForm, SubscriptionsForm
-
+from .tasks import new_post_notification
 
 
 class PostsList(ListView):
@@ -103,7 +103,6 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     def form_valid(self, form):
         post = form.save(commit=False)
         path = self.request.path
-        print(self.request.POST)
         if not check_user_limit(self.request.user):
             return redirect('all_posts')
 
