@@ -1,0 +1,103 @@
+2024-04-24 16:02:45,293 -- INFO -- autoreload
+2024-04-24 16:02:47,881 -- INFO -- basehttp
+2024-04-24 16:02:50,136 -- INFO -- basehttp
+2024-04-24 16:02:50,376 -- INFO -- basehttp
+2024-04-24 16:02:53,414 -- ERROR -- basehttp
+2024-04-24 16:05:27,380 -- INFO -- autoreload
+2024-04-24 16:05:28,159 -- INFO -- autoreload
+2024-04-24 16:05:59,550 -- INFO -- autoreload
+2024-04-24 16:06:00,267 -- INFO -- autoreload
+2024-04-24 16:06:01,568 -- ERROR -- basehttp
+2024-04-24 16:06:18,790 -- INFO -- autoreload
+2024-04-24 16:06:19,619 -- INFO -- autoreload
+2024-04-24 16:07:56,553 -- INFO -- autoreload
+2024-04-24 16:07:57,257 -- INFO -- autoreload
+2024-04-24 16:08:00,856 -- ERROR -- basehttp
+2024-04-24 16:29:36,150 -- ERROR -- basehttp
+2024-04-24 16:29:50,051 -- ERROR -- basehttp
+2024-04-24 16:30:37,706 -- INFO -- autoreload
+2024-04-24 16:30:38,549 -- INFO -- autoreload
+2024-04-24 16:30:55,191 -- INFO -- autoreload
+2024-04-24 16:30:55,937 -- INFO -- autoreload
+2024-04-24 16:31:12,889 -- INFO -- autoreload
+2024-04-24 16:31:13,618 -- INFO -- autoreload
+2024-04-24 16:31:15,852 -- ERROR -- log
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 38, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:31:15,874 -- ERROR -- basehttp
+2024-04-24 16:31:48,807 -- INFO -- autoreload
+2024-04-24 16:31:49,537 -- INFO -- autoreload
+2024-04-24 16:32:05,599 -- INFO -- autoreload
+2024-04-24 16:32:19,025 -- INFO -- autoreload
+2024-04-24 16:32:19,777 -- INFO -- autoreload
+2024-04-24 16:32:37,914 -- INFO -- autoreload
+2024-04-24 16:32:38,784 -- INFO -- autoreload
+2024-04-24 16:34:27,991 -- INFO -- autoreload
+2024-04-24 16:34:28,693 -- INFO -- autoreload
+2024-04-24 16:34:47,841 -- INFO -- autoreload
+2024-04-24 16:34:48,544 -- INFO -- autoreload
+2024-04-24 16:34:50,842 -- INFO -- basehttp
+2024-04-24 16:34:51,496 -- INFO -- basehttp
+2024-04-24 16:34:51,906 -- INFO -- basehttp
+2024-04-24 16:34:52,091 -- INFO -- basehttp
+2024-04-24 16:34:52,275 -- INFO -- basehttp
+2024-04-24 16:34:57,701 -- INFO -- autoreload
+2024-04-24 16:34:58,503 -- INFO -- autoreload
+2024-04-24 16:35:00,309 -- INFO -- basehttp
+2024-04-24 16:35:00,703 -- INFO -- basehttp
+2024-04-24 16:35:00,970 -- INFO -- basehttp
+2024-04-24 16:35:01,048 -- INFO -- basehttp
+2024-04-24 16:35:01,230 -- INFO -- basehttp
+2024-04-24 16:35:06,457 -- INFO -- autoreload
+2024-04-24 16:35:07,246 -- INFO -- autoreload
+2024-04-24 16:35:38,454 -- INFO -- autoreload
+2024-04-24 16:35:38,995 -- INFO -- autoreload
+2024-04-24 16:36:44,892 -- INFO -- autoreload
+2024-04-24 16:36:45,560 -- INFO -- autoreload
+2024-04-24 16:36:56,778 -- INFO -- autoreload
+2024-04-24 16:36:57,535 -- INFO -- autoreload
+2024-04-24 16:37:23,428 -- INFO -- autoreload
+2024-04-24 16:37:24,157 -- INFO -- autoreload
+2024-04-24 16:37:47,656 -- INFO -- autoreload
+2024-04-24 16:37:48,358 -- INFO -- autoreload
+2024-04-24 16:38:04,042 -- INFO -- autoreload
+2024-04-24 16:38:04,768 -- INFO -- autoreload
+2024-04-24 16:38:06,579 -- INFO -- basehttp
+2024-04-24 16:38:07,222 -- INFO -- basehttp
+2024-04-24 16:38:07,547 -- INFO -- basehttp
+2024-04-24 16:38:07,774 -- INFO -- basehttp
+2024-04-24 16:38:08,012 -- INFO -- basehttp
+2024-04-24 16:38:08,241 -- INFO -- basehttp
+2024-04-24 16:38:38,340 -- INFO -- autoreload
+2024-04-24 16:38:39,042 -- INFO -- autoreload
+2024-04-24 16:38:41,014 -- INFO -- basehttp
+2024-04-24 16:38:41,573 -- INFO -- basehttp
+2024-04-24 16:38:41,821 -- INFO -- basehttp
+2024-04-24 16:38:47,092 -- INFO -- autoreload
+2024-04-24 16:38:47,833 -- INFO -- autoreload
+2024-04-24 16:39:09,570 -- INFO -- autoreload
+2024-04-24 16:39:10,426 -- INFO -- autoreload
+2024-04-24 16:39:21,356 -- INFO -- basehttp
+2024-04-24 16:39:22,262 -- INFO -- basehttp
+2024-04-24 16:42:14,514 -- INFO -- autoreload
+2024-04-24 16:42:15,224 -- INFO -- autoreload
+2024-04-24 16:42:21,775 -- INFO -- basehttp
+2024-04-24 16:42:22,369 -- INFO -- basehttp
+2024-04-24 16:42:22,592 -- INFO -- basehttp
+2024-04-24 16:42:22,777 -- INFO -- basehttp

@@ -16,7 +16,7 @@ def subscribers_notification(sender, instance, **kwargs):
     action = kwargs.pop('action', None)
 
     if action == 'post_add':  # если произошло создание нового поста
-        print('instance.pk == ', instance.pk)
+        print('создание таски -instance.pk == ', instance.pk)
         # Создаем таску в celery для отправки почты
-        new_post_notification.delay(post_id=instance.pk)
+        # new_post_notification.delay(post_id=instance.pk)
 

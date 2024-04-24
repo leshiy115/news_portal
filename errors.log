@@ -1,0 +1,218 @@
+2024-04-24 16:02:53,397 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x000001A8C50130C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:32,095 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x00000196BB5DC3C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:32,113 -- ERROR -- "GET / HTTP/1.1" 500 95084 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:05:32,976 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x00000196BB58F980>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:32,991 -- ERROR -- "GET / HTTP/1.1" 500 95084 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:05:33,415 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x00000196BB3FBEC0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:33,428 -- ERROR -- "GET / HTTP/1.1" 500 95084 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:05:35,705 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x00000196BB60BF80>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:35,718 -- ERROR -- "GET / HTTP/1.1" 500 95084 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:05:36,118 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x00000196BB5CB080>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:05:36,158 -- ERROR -- "GET / HTTP/1.1" 500 95084 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:06:01,551 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x0000016D2E1494C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:08:00,838 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x000001A653707D00>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:08:00,856 -- ERROR -- "GET / HTTP/1.1" 500 95081 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:29:36,136 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x000001A6535C25C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:29:36,150 -- ERROR -- "GET / HTTP/1.1" 500 95081 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:29:50,037 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x000001A6536EB840>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 37, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:29:50,051 -- ERROR -- "GET / HTTP/1.1" 500 95081 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-24 16:31:15,852 -- ERROR -- Internal Server Error: / -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'queryset1' is not defined"), <traceback object at 0x000001C809AC7240>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\git\news_portal\news\views.py", line 38, in get_queryset
+    return queryset1
+NameError: name 'queryset1' is not defined
+2024-04-24 16:31:15,874 -- ERROR -- "GET / HTTP/1.1" 500 95069 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None

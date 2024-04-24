@@ -153,7 +153,7 @@ STATICFILES_DIRS = [
 ############## for email notifications
 EMAIL_HOST = 'smtp.yandex.ru'  # адрес сервера Яндекс-почты для всех один и тот же
 EMAIL_PORT = 465  # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = 'some_name'  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_USER = 'some_name'  # ваше имя пользователя, это всё то что идёт до собаки.
 EMAIL_HOST_PASSWORD = 'some_pass'  # пароль от почты
 EMAIL_USE_SSL = True  # Яндекс использует ssl, подробнее почитайте в дополнительных источниках, но включать его здесь обязательно
 #############
@@ -181,10 +181,10 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'  # здесь указыва
 
 ############## рассылка админам проекта
 ADMINS = [
-    ('Админ', 'eminence_grise@inbox.ru'),
+    # ('Админ', 'eminence_grise@inbox.ru'),
     # список всех админов в формате ('имя', 'их почта')
 ]
-SERVER_EMAIL = 'some_name@yandex.ru'
+SERVER_EMAIL = 'some_mail@yandex.ru'
 ##############
 
 ############## apscheduler
@@ -202,4 +202,118 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 broker_connection_retry_on_startup = False
+#############
+
+############# cashes
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),  # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
+    }
+}
+#############
+
+############# настройки логирования
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'style': '{',
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s %(asctime)s %(message)s'
+        },
+        'warning': {
+            'format': '%(levelname)s %(asctime)s %(pathname)s %(message)s'
+        },
+        'error_critical': {
+            'format': '%(levelname)s %(asctime)s %(pathname)s %(message)s \n    exc_info = %(exc_info)s'
+        },
+        'general': {
+            'format': '%(asctime)s -- %(levelname)s -- %(module)s'
+        },
+        'errors': {
+            'format': '%(asctime)s -- %(levelname)s -- %(message)s -- %(pathname)s -- %(exc_info)s'
+        },
+    },
+    "filters": {
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'warning_and_more': {
+            'level': 'WARNING',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'warning',
+
+        },
+        'error_critical': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'error_critical',
+
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'general_file': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'formatter': 'general',
+            'filename': 'general.log'
+        },
+        'errors_file': {
+            'level': 'ERROR',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'formatter': 'errors',
+            'filename': 'errors.log'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'warning_and_more', 'error_critical', 'general_file'],
+            'filters': ['require_debug_true'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins', 'errors_file'],
+            'level': 'ERROR',
+            'filters': ['require_debug_true'],
+            'propagate': False,
+        },
+        # 'django.server': {
+        #     'handlers': ['errors_file'],
+        #     'level': 'ERROR',
+        #     'filters': ['require_debug_true'],
+        #     'propagate': False,
+        # },
+        # 'django.template': {
+        #     'handlers': ['errors_file'],
+        #     'level': 'ERROR',
+        #     'filters': ['require_debug_true'],
+        #     'propagate': False,
+        # },
+        # 'django.db.backends': {
+        #     'handlers': ['errors_file'],
+        #     'level': 'ERROR',
+        #     'filters': ['require_debug_true'],
+        #     'propagate': False,
+        # },
+    }
+}
+
 #############
