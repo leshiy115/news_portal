@@ -34,8 +34,8 @@ class PostsList(ListView):
         queryset = super().get_queryset()
 
         if not self.request.path or self.request.path == '/':
-            # тестовая ошибка
-            # return queryset1
+
+            # return queryset1  # тестовая ошибка
             return queryset
 
         if 'news/' in self.request.path:
