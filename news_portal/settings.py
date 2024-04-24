@@ -307,30 +307,25 @@ LOGGING = {
         'django.request': {
             'handlers': ['mail_admins', 'errors_file'],
             'level': 'INFO',
-            'filters': ['require_debug_true'],
             'propagate': True,
         },
         'django.server': {
             'handlers': ['mail_admins', 'errors_file'],
-            'filters': ['require_debug_true'],
             'level': 'INFO',
             'propagate': True,
         },
         'django.template': {
             'handlers': ['errors_file'],
-            'filters': ['require_debug_true'],
             'level': 'INFO',
             'propagate': True,
         },
         'django.security': {
             'handlers': ['errors_file'],
-            'filters': ['require_debug_true'],
             'level': 'INFO',
             'propagate': True,
         },
         'django.db.backends': {
             'handlers': ['security_file'],
-            'filters': ['require_debug_true'],
             'level': 'INFO',
             'propagate': True,
         },
