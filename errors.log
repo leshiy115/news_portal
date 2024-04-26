@@ -276,3 +276,17 @@ Traceback (most recent call last):
     # return queryset1  # тестовая ошибка
 NameError: name 'queryset1' is not defined
 2024-04-24 22:11:08,949 -- ERROR -- "GET / HTTP/1.1" 500 96406 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-26 13:49:53,361 -- ERROR -- Internal Server Error: /test/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'HttpResponse' is not defined"), <traceback object at 0x000002762B43B440>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return HttpResponse(string)
+NameError: name 'HttpResponse' is not defined
+2024-04-26 13:49:53,365 -- ERROR -- "GET /test/ HTTP/1.1" 500 80405 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None

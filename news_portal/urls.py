@@ -23,7 +23,6 @@ urlpatterns = [
     # path('sign/', include('sign.urls')),
     # allauth
     path('accounts/', include('allauth.urls')),
-
 ]
 
 # все ссылки allauth.

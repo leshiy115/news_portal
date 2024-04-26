@@ -191,3 +191,15 @@ def check_user_limit(user):
         return True
 
 
+from django.http import HttpResponse
+from django.utils.translation import gettext as _  # импортируем функцию для перевода
+
+
+# Create your views here.
+
+class TransTest(View):
+    def get(self, request):
+        string = _('Hello world')
+
+        return HttpResponse(string)
+
