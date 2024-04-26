@@ -4,13 +4,13 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User, Group, AbstractUser
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.utils.translation import gettext as _
 
 from allauth.account.forms import SignupForm
 from allauth.account.adapter import DefaultAccountAdapter
 from allauth.socialaccount.forms import SignupForm as SocialSignupForm  # для переопределения метода первоначальной регистрации через гугл. Сменил наименование потому что выше есть такое же.
 
 from .models import Post, Category, Author
-
 
 class PostForm(forms.ModelForm):
 
@@ -28,7 +28,7 @@ class PostForm(forms.ModelForm):
         title = cleaned_data.get("title")
         if title == text:
             raise ValidationError({
-                "text": f"Текст не должен быть таким же как название."
+                "text": _("The text should not be the same as the title.")
             })
         return cleaned_data
 
@@ -40,15 +40,15 @@ class BasicSignupForm(SignupForm):
     email = forms.EmailField(label="Email")
     username_validator = UnicodeUsernameValidator()
     username = forms.CharField(
-        label="Ник",
+        label=_('nickname'),
         max_length=150,
         validators=[username_validator],
         error_messages={
-            "unique": "Имя пользователя с таким именем уже существует",
+            "unique": _("A username with the same name already exists"),
         },
     )
-    first_name = forms.CharField(label="Имя", required=False)
-    last_name = forms.CharField(label="Фамилия", required=False)
+    first_name = forms.CharField(label=_("Name"), required=False)
+    last_name = forms.CharField(label=_("Surname"), required=False)
 
     class Meta:
         model = User

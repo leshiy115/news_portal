@@ -1,19 +1,20 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
+{% load i18n %}
 
 {% block title %}
   {% if post.post_type == "N" %}
-    Новость
+    {% trans 'News' %}
   {% else %}
-    Статья
+    {% trans 'Article' %}
   {% endif %}
 {% endblock title %}
 
 {% block posts_content %}
   <body>
     <h1>{{ post.title }}</h1>
-    <p>Автор: {{ post.author.user.username | censor}}  Дата публикации: {{ post.time_created | date:'d M Y' }}</p>
-    <p>Категории:
+    <p>{% trans 'Author' %}: {{ post.author.user.username | censor}}  {% trans 'Publication date' %}: {{ post.time_created | date:'d M Y' }}</p>
+    <p>{% trans 'Categories' %}:
       {% for cat in post.category.all %}
         <span> {{ cat.name }} </span>
       {% endfor %}
@@ -22,9 +23,9 @@
     <p>
       post_type ==
       {% if post.post_type == "N" %}
-        Новость
+        {% trans 'News' %}
       {% else %}
-        Статья
+        {% trans 'Article' %}
       {% endif %}
     </p>
 
@@ -33,18 +34,18 @@
     {% if post.text %}
       <p>{{ post.text | censor }}</p>
     {% else %}
-      <h3>Текст отсутствует</h3>
+      <h3>{% trans 'No text' %}</h3>
     {% endif %}
 
 
     {% if request.user == post.author.user %}
     <p>
-      <a href="/news/{{ post.pk }}/edit/">Редактировать</a>
+      <a href="/news/{{ post.pk }}/edit/">{% trans 'Edit' %}</a>
       |
-      <a href="/news/{{ post.pk }}/delete/">Удалить</a>
+      <a href="/news/{{ post.pk }}/delete/">{% trans 'Delete' %}</a>
     </p>
     {% endif %}
 
-    <p>Рейтинг: {{ post.rating }}</p>
+    <p>{% trans 'Rating' %}: {{ post.rating }}</p>
   </body>
 {% endblock posts_content %}

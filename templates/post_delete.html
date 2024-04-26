@@ -1,11 +1,12 @@
 {% extends 'default.html' %}
 
 {% block posts_content %}
-<h1>Удаление товара</h1>
-<hr>
-<form action="" method="post">
-    {% csrf_token %}
-    <p>Удаляем "{{ object.title }}"?</p>
-    <input type="submit" value="Delete" />
-</form>
+  {% load i18n %}
+  <h1>{% trans 'Deleting an article' %}</h1>
+  <hr>
+  <form action="" method="post">
+      {% csrf_token %}
+      <p>{% trans 'Delete' %} "{{ object.title }}"?</p>
+      <input type="submit" value="Delete" />
+  </form>
 {% endblock posts_content %}

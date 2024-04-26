@@ -1,13 +1,14 @@
 from django.urls import path
 from .views import (PostsList, PostDetail, PostCreate,
                     PostUpdate, PostDelete,
-                    UserDetail, upgrade_me, Subscriptions, TransTest)
+                    UserDetail, upgrade_me, Subscriptions)
 from django.views.decorators.cache import cache_page
 
 
 #todo После сдачи задания удалить лишнее.
 urlpatterns = [
-   path('', cache_page(10)(PostsList.as_view()), name='all_posts'),
+   # path('', cache_page(10)(PostsList.as_view()), name='all_posts'),
+   path('', PostsList.as_view(), name='all_posts'),
    path('news/', PostsList.as_view(), name='news'),
    path('news/search/', PostsList.as_view(), name='news_search'),
    path('articles/', PostsList.as_view(), name='articles'),
@@ -28,6 +29,5 @@ urlpatterns = [
    path('user_profile/<int:pk>/', UserDetail.as_view(), name='user_profile'),
    path('upgrade/', upgrade_me, name='upgrade'),
    path('user_profile/<int:pk>/subscriptions/', Subscriptions.as_view(), name='subscriptions'),
-   path('test/', TransTest.as_view()),
 ]
 

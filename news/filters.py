@@ -7,6 +7,8 @@ from django_filters import (FilterSet, ModelChoiceFilter,
 from django.contrib.auth.models import User
 from .models import Post, Category
 from django.forms import SelectDateWidget
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy
 
 
 YEARS = [2018 + x for x in range(1, 8)]
@@ -17,12 +19,12 @@ class PostFilter(FilterSet):
     category = ModelMultipleChoiceFilter(
         field_name='postcategory__category',
         queryset=Category.objects.all(),
-        label='Категории',
+        label=_('Categories'),
         conjoined=True,
     )
 
     # Одна строчка весь день заняла(((.
-    time_created = DateFilter(label='Дата публикации после',
+    time_created = DateFilter(label=_('Publication date after'),
         lookup_expr='gt',
         widget=SelectDateWidget(years=YEARS))
 

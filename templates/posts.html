@@ -1,25 +1,25 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
 {% load custom_tags %}
-
+{% load i18n %}
 
 {% block title %}
-  Посты
+  {% trans 'Posts' %}
 {% endblock title %}
 
 
 {% block posts_content %}
   <body>
-  <h1>Все статьи</h1>
-  <h3><a href="/news/search/">Поиск</a></h3>
-  <h3><a href="/news/create/">Написать новость</a></h3>
-  <h3><a href="/articles/create/">Написать статью</a></h3>
+  <h1>{% trans 'All articles' %}</h1>
+  <h3><a href="/news/search/">{% trans "Search" %}</a></h3>
+  <h3><a href="/news/create/">{% trans "Write a news" %}</a></h3>
+  <h3><a href="/articles/create/">{% trans "Write an article" %}</a></h3>
   {% if request.user.is_authenticated %}
-  <p>Если хотите оформить подписку на определенную категорию пройдите в
-    <a href="{% url 'user_profile' request.user.id %}">личный кабинет</a>.
+  <p>{% trans "If you want to subscribe to a specific category, go to" %}
+    <a href="{% url 'user_profile' request.user.id %}">{% trans "personal account" %}</a>.
   </p>
   {% else %}
-    <p>Если хотите оформить подписку на определенную категорию пройдите в личный кабинет.</p>
+    <p>{% trans "If you want to subscribe to a specific category, go to personal account." %}</p>
   {% endif %}
 
   {# Filtersts #}
@@ -28,7 +28,7 @@
        {# Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями #}
        {{ filterset.form.as_p }}
        {# Добавим кнопку отправки данных формы #}
-       <input type="submit" value="Найти" />
+       <input type="submit" value={% trans "Find" %} />
    </form>
   {% endif %}
 
@@ -37,8 +37,8 @@
   {% if posts %}
     {% for post in posts %}
       <h3><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a></h3>(post.pk={{ post.pk }})
-      <p>Автор: {{ post.author.user.username | censor }} (дата: {{ post.time_created | date:'d M Y' }})</p>
-      <p>Категории:
+      <p>{% trans "Author" %}: {{ post.author.user.username | censor }} ({% trans дата %}: {{ post.time_created | date:'d M Y' }})</p>
+      <p>{% trans "Categories" %}:
         {% for cat in post.category.all %}
           <span> {{ cat.name }} </span>
         {% endfor %}
@@ -48,14 +48,14 @@
       <hr>
     {% endfor %}
   {% else %}
-    <h2>На сайте не опубликовано ни одной статьи</h2>
+    <h2>{% trans "No articles have been published" %}</h2>
   {% endif %}
 
   {#    Пагинатор  #}
   <div align="center">
     <h3>
       {% if page_obj.has_previous %}
-            <a href="?{% url_replace page=page_obj.previous_page_number %}">&lt;&lt;Назад &nbsp</a>
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">&lt;&lt;{% trans "Back" %} &nbsp</a>
   {#          <a href="?page=1">1</a>#}
             <a href="?{% url_replace page=1 %}">1</a>
         {% if page_obj.previous_page_number != 1 %}
@@ -74,7 +74,7 @@
           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
         {% endif %}
         {% if page_obj.has_next %}
-          <a href="?{% url_replace page=page_obj.next_page_number %}">&nbsp Вперед&gt;&gt;</a>
+          <a href="?{% url_replace page=page_obj.next_page_number %}">&nbsp {% trans 'Forward' %}&gt;&gt;</a>
         {% endif %}
       {% endif %}
     </h3>

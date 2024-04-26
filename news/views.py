@@ -13,7 +13,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import PermissionRequiredMixin
-
+from django.utils.translation import gettext as _  # функция для перевода
 
 
 from .models import Category, Post, Author, PostCategory, Comment
@@ -191,15 +191,8 @@ def check_user_limit(user):
         return True
 
 
-from django.http import HttpResponse
+
 from django.utils.translation import gettext as _  # импортируем функцию для перевода
 
 
-# Create your views here.
-
-class TransTest(View):
-    def get(self, request):
-        string = _('Hello world')
-
-        return HttpResponse(string)
 

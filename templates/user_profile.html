@@ -1,5 +1,6 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
+{% load i18n %}
 
 {% block title %}
 {{ user.username | capfirst }}
@@ -8,14 +9,14 @@
 {% block posts_content %}
   <body>
     <h1>{{ user.username }}</h1>
-    <p>Имя:
+    <p>{% trans 'Name' %}:
       {% if user.first_name %}
         {{ user.first_name | capfirst}}
       {% else %}
         .......
       {% endif %}
     </p>
-    <p>Фамилия:
+    <p>{% trans 'Surname' %}:
       {% if user.last_name %}
         {{ user.last_name | capfirst}}
       {% else %}
@@ -23,25 +24,25 @@
       {% endif %}
     </p>
     <p>
-      Почта: {{ user.email }}
+      {% trans 'Mail' %}: {{ user.email }}
     </p>
     <p>
-      Уровень доступа:
+      {% trans 'Access level' %}:
       {% if is_not_premium %}
-        Вы не автор! Вам доступен просмотр и комментирование статей. Если хотите стать автором перейдите по
-        <a href="/upgrade/">ссылке.</a>
+        {% trans 'You are not the author! You can view and comment on articles. If you want to become an author, go to' %}
+        <a href="/upgrade/">{% trans 'link' %}.</a>
       {% else %}
-        Вам доступно: создание, редактирование и комментирование статей.
+        {% trans 'You have access to: creating, editing and commenting on articles' %}.
       {% endif %}
     </p>
     <p>
-      <a href="/user_profile/{{ user.pk }}/subscriptions/">Управление подпиской</a>
+      <a href="/user_profile/{{ user.pk }}/subscriptions/">{% trans 'Subscription management' %}</a>
     </p>
     <p>
-      <a href="{% url 'account_change_password' %}">Сменить пароль</a>
+      <a href="{% url 'account_change_password' %}">{% trans 'Change password' %}</a>
     </p>
     <p>
-      <a href="{% url 'account_email' %}">Изменить Почту</a>
+      <a href="{% url 'account_email' %}">{% trans 'Change Mail' %}</a>
     </p>
   </body>
 {% endblock posts_content %}

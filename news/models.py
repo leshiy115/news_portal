@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils.translation import gettext as _
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     # рейтинг пользователя.
     rating = models.IntegerField(default=0)
-    subscriptions = models.ManyToManyField('Category', through='Subscribers', verbose_name='Категории в подписке')
+    subscriptions = models.ManyToManyField('Category', through='Subscribers',
+        verbose_name=_('Categories in a subscription'))
 
     def __str__(self):
         return self.user.username
@@ -72,13 +74,13 @@ class Post(models.Model):
                  (news, 'Новости')]
     post_type = models.CharField(max_length=1, choices=POSITIONS, default=article)
     # автоматически добавляемая дата и время создания;
-    time_created = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    time_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Publication date'))
     # заголовок статьи/новости;
-    title = models.CharField(max_length=255, unique=True, verbose_name='Название')
+    title = models.CharField(max_length=255, unique=True, verbose_name=_('Name'))
     # текст статьи/новости;
-    text = models.TextField(verbose_name="Текст")
+    text = models.TextField(verbose_name=_("Text"))
     # рейтинг статьи/новости.
-    rating = models.IntegerField(default=0, verbose_name='Рейтинг')
+    rating = models.IntegerField(default=0, verbose_name=_('Rating'))
     # связь «один ко многим» с моделью Author;
     #!! Можно было при удалении поста авторство перетекало админу и отображалось бы как "Неизвестный автор" или имя сохранялось в отдельную модель и отражалось бы от туда. Так бы пост мог оставаться на сайте. Но думаю это нарушении авторских прав. Если стоит это провернуть напиши в ответе.
     author = models.ForeignKey('Author', null=True, on_delete=models.CASCADE)
@@ -141,11 +143,11 @@ class Comment(models.Model):
     #todo стоит подумать как создать модели для комментирования комментариев.
 
     # текст комментария;
-    text = models.TextField(verbose_name='Текст')
+    text = models.TextField(verbose_name=_('Text'))
     # дата и время создания комментария;
-    time_created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    time_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Date of creation'))
     # рейтинг комментария.
-    rating = models.IntegerField(default=0, verbose_name='Рейтинг')
+    rating = models.IntegerField(default=0, verbose_name=_('Rating'))
     # связь «один ко многим» с моделью Post;
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
     # связь «один ко многим» со встроенной моделью User (комментарии может оставить любой пользователь, необязательно автор);
