@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (PostsList, PostDetail, PostCreate,
                     PostUpdate, PostDelete,
-                    UserDetail, upgrade_me, Subscriptions)
+                    UserDetail, upgrade_me, Subscriptions, TimeZoneChange)
 from django.views.decorators.cache import cache_page
 
 
@@ -29,5 +29,6 @@ urlpatterns = [
    path('user_profile/<int:pk>/', UserDetail.as_view(), name='user_profile'),
    path('upgrade/', upgrade_me, name='upgrade'),
    path('user_profile/<int:pk>/subscriptions/', Subscriptions.as_view(), name='subscriptions'),
+   path('time_zone/', TimeZoneChange.as_view(), name='time_zone'),
 ]
 

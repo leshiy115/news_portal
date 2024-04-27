@@ -11,7 +11,6 @@
 {% endblock title %}
 
 {% block posts_content %}
-  <body>
     <h1>{{ post.title }}</h1>
     <p>{% trans 'Author' %}: {{ post.author.user.username | censor}}  {% trans 'Publication date' %}: {{ post.time_created | date:'d M Y' }}</p>
     <p>{% trans 'Categories' %}:
@@ -47,5 +46,4 @@
     {% endif %}
 
     <p>{% trans 'Rating' %}: {{ post.rating }}</p>
-  </body>
 {% endblock posts_content %}

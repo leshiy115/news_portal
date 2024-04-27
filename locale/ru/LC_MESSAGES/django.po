@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-27 00:11+0300\n"
+"POT-Creation-Date: 2024-04-27 21:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,12 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\news\filters.py:22 .\templates\post.html:17 .\templates\posts.html:41
+#: .\news\filters.py:21 .\news\models.py:88 .\templates\post.html:17
+#: .\templates\posts.html:41
 msgid "Categories"
 msgstr "Категории"
 
-#: .\news\filters.py:27
+#: .\news\filters.py:26
 #, fuzzy
 #| msgid "Publication date"
 msgid "Publication date after"
@@ -56,6 +57,18 @@ msgstr "Фамилия"
 msgid "Categories in a subscription"
 msgstr "Ваши подписки"
 
+#: .\news\models.py:73 .\templates\post.html:9 .\templates\post.html:28
+#: .\templates\post_edit.html:10
+#, fuzzy
+#| msgid "All articles"
+msgid "Article"
+msgstr "Все статьи"
+
+#: .\news\models.py:74 .\templates\post.html:7 .\templates\post.html:26
+#: .\templates\post_edit.html:8
+msgid "News"
+msgstr "Новости"
+
 #: .\news\models.py:77 .\templates\post.html:16
 msgid "Publication date"
 msgstr "Дата публикации"
@@ -84,11 +97,11 @@ msgstr "Меню"
 msgid "Change mail"
 msgstr "Изменить почту"
 
-#: .\templates\allauth\layouts\base.html:35 .\templates\default.html:50
+#: .\templates\allauth\layouts\base.html:35 .\templates\default.html:51
 msgid "Sing out"
 msgstr "Выйти"
 
-#: .\templates\allauth\layouts\base.html:39 .\templates\default.html:54
+#: .\templates\allauth\layouts\base.html:39 .\templates\default.html:55
 msgid "Sing in"
 msgstr "Войти"
 
@@ -96,37 +109,29 @@ msgstr "Войти"
 msgid "Sing up"
 msgstr "Зарегистрироваться"
 
-#: .\templates\default.html:26
+#: .\templates\default.html:27
 msgid "News and articles"
 msgstr "Написать статью"
 
-#: .\templates\default.html:36
+#: .\templates\default.html:37
 msgid "About site"
 msgstr "О сайте"
 
-#: .\templates\default.html:39
+#: .\templates\default.html:40
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\templates\default.html:46
+#: .\templates\default.html:47
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
-#: .\templates\default.html:71
+#: .\templates\default.html:73
 msgid "set"
 msgstr "сменить"
 
-#: .\templates\post.html:7 .\templates\post.html:26
-#: .\templates\post_edit.html:8
-msgid "News"
-msgstr "Новости"
-
-#: .\templates\post.html:9 .\templates\post.html:28
-#: .\templates\post_edit.html:10
-#, fuzzy
-#| msgid "All articles"
-msgid "Article"
-msgstr "Все статьи"
+#: .\templates\default.html:81
+msgid "Time"
+msgstr "Время"
 
 #: .\templates\post.html:16 .\templates\posts.html:40
 msgid "Author"
@@ -183,8 +188,6 @@ msgid "If you want to subscribe to a specific category, go to"
 msgstr "Если хотите подписаться на определенную категорию, зайдите в"
 
 #: .\templates\posts.html:19
-#, fuzzy
-#| msgid "my account"
 msgid "personal account"
 msgstr "личный кабинет"
 
@@ -222,6 +225,18 @@ msgstr "Ваши подписки"
 msgid "Save"
 msgstr "Сохранить"
 
+#: .\templates\time_zone_change.html:6 .\templates\time_zone_change.html:14
+msgid "Time zone"
+msgstr "Часовой пояс"
+
+#: .\templates\time_zone_change.html:25
+msgid "Present time zone"
+msgstr "Установленный часовой пояс"
+
+#: .\templates\time_zone_change.html:26
+msgid "Time in current time zone"
+msgstr "Время в данном часовом поясе"
+
 #: .\templates\user_profile.html:27
 msgid "Mail"
 msgstr "Почта"
@@ -246,21 +261,30 @@ msgstr "ссылка"
 msgid "You have access to: creating, editing and commenting on articles"
 msgstr "Вам доступно: создание, редактирование и комментирование статей."
 
-#: .\templates\user_profile.html:39
+#: .\templates\user_profile.html:40
+msgid "Time zone change"
+msgstr "Смена часового пояса "
+
+#: .\templates\user_profile.html:44
 msgid "Subscription management"
 msgstr "Управление подпиской"
 
-#: .\templates\user_profile.html:42
+#: .\templates\user_profile.html:47
 #, fuzzy
 #| msgid "Change mail"
 msgid "Change password"
 msgstr "Изменить почту"
 
-#: .\templates\user_profile.html:45
+#: .\templates\user_profile.html:50
 #, fuzzy
 #| msgid "Change mail"
 msgid "Change Mail"
 msgstr "Изменить почту"
+
+#, fuzzy
+#~| msgid "Categories"
+#~ msgid "Category"
+#~ msgstr "Категории"
 
 #, fuzzy
 #~| msgid "my account"

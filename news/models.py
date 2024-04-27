@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
@@ -70,8 +70,8 @@ class Post(models.Model):
     # поле с выбором — «статья» или «новость»;
     article = 'A'
     news = 'N'
-    POSITIONS = [(article, 'Статья'),
-                 (news, 'Новости')]
+    POSITIONS = [(article, _('Article')),
+                 (news, _('News'))]
     post_type = models.CharField(max_length=1, choices=POSITIONS, default=article)
     # автоматически добавляемая дата и время создания;
     time_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Publication date'))
@@ -85,7 +85,7 @@ class Post(models.Model):
     #!! Можно было при удалении поста авторство перетекало админу и отображалось бы как "Неизвестный автор" или имя сохранялось в отдельную модель и отражалось бы от туда. Так бы пост мог оставаться на сайте. Но думаю это нарушении авторских прав. Если стоит это провернуть напиши в ответе.
     author = models.ForeignKey('Author', null=True, on_delete=models.CASCADE)
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
-    category = models.ManyToManyField('Category', through='PostCategory')
+    category = models.ManyToManyField('Category', through='PostCategory', verbose_name=_('Categories'))
 
 
 
@@ -108,11 +108,11 @@ class Post(models.Model):
         и связь данный пост с ней"""
         if not category_name:
             if not self.category.all():
-                category = Category.objects.get(name='Без категории')
+                category = Category.objects.get(name="Uncategorized")
                 PostCategory.objects.create(category=category, post=self)
         else:
-            if self.category.get(name='Без категории'):
-                del_cat = Category.objects.get(name='Без категории')
+            if self.category.get(name="Uncategorized"):
+                del_cat = Category.objects.get(name="Uncategorized")
                 PostCategory.objects.filter(category=del_cat, post=self).delete()
             category = Category.objects.get(name=category_name)
             PostCategory.objects.create(category=category, post=self)

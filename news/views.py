@@ -1,5 +1,6 @@
 from datetime import datetime
 from pprint import pprint
+import pytz
 
 import requests
 from django.utils import timezone
@@ -11,10 +12,10 @@ from django.contrib.auth.models import User, AnonymousUser
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.utils.translation import gettext as _  # функция для перевода
-
+from django.utils import timezone
+from django.shortcuts import redirect
 
 from .models import Category, Post, Author, PostCategory, Comment
 from .filters import PostFilter
@@ -192,7 +193,21 @@ def check_user_limit(user):
 
 
 
-from django.utils.translation import gettext as _  # импортируем функцию для перевода
+
+class TimeZoneChange(View):
+    def get(self, request):
+        context = {
+            'current_time': timezone.now(),
+            'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
+        }
+        return render(request, 'time_zone_change.html', context=context)
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('time_zone')
+
+
+
 
 
 

@@ -10,15 +10,19 @@
       {% endblock title %}
     </title>
 
+    {% load i18n %}
+    {% load static %}
+    {% load custom_tags %}
+    {% load tz %}
+    {% get_current_timezone as tz %}
+    {% clock tz as clock %}
     {% block head %}
     {% endblock head %}
 
-    {% load i18n %}
-    {% load static %}
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
   </head>
-  <body>
+  <body style="background-color: {% if clock.hour >= 19 or clock.hour <= 7 %} darkcyan {% else %} powderblue {% endif %}">
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
@@ -54,6 +58,7 @@
                 <a class="nav-link" href="/accounts/login/">{% trans 'Sing in' %}</a>
               </li>
             {% endif %}
+
             <li class="nav-item">
              <a>
                <form action="{% url 'set_language' %}" method="POST">
@@ -71,6 +76,10 @@
                   <input type="submit" value={% trans 'set' %}>
                 </form>
               </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/login/">{% trans 'Time' %}: {{ clock.clock }} hour = {{ clock.hour }}</a>
             </li>
 
           </ul>

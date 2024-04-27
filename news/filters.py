@@ -7,8 +7,7 @@ from django_filters import (FilterSet, ModelChoiceFilter,
 from django.contrib.auth.models import User
 from .models import Post, Category
 from django.forms import SelectDateWidget
-from django.utils.translation import gettext as _
-from django.utils.translation import pgettext_lazy
+from django.utils.translation import gettext_lazy as _
 
 
 YEARS = [2018 + x for x in range(1, 8)]

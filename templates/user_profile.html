@@ -7,7 +7,6 @@
 {% endblock title %}
 
 {% block posts_content %}
-  <body>
     <h1>{{ user.username }}</h1>
     <p>{% trans 'Name' %}:
       {% if user.first_name %}
@@ -35,6 +34,11 @@
         {% trans 'You have access to: creating, editing and commenting on articles' %}.
       {% endif %}
     </p>
+
+    <p>
+      <a href="{% url 'time_zone' %}">{% trans 'Time zone change' %}</a>
+    </p>
+
     <p>
       <a href="/user_profile/{{ user.pk }}/subscriptions/">{% trans 'Subscription management' %}</a>
     </p>
@@ -44,7 +48,6 @@
     <p>
       <a href="{% url 'account_email' %}">{% trans 'Change Mail' %}</a>
     </p>
-  </body>
 {% endblock posts_content %}
 
 

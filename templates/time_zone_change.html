@@ -1,0 +1,26 @@
+{% extends 'default.html' %}
+{% load i18n %}
+{% load tz %}
+
+{% block title %}
+  {% trans 'Time zone' %}
+{% endblock title %}
+
+{% block posts_content %}
+  {% get_current_timezone as TIME_ZONE %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <label for="timezone">{% trans 'Time zone' %}:</label>
+    <label>
+      <select name="timezone">
+        {% for tz in timezones %}
+        <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <input type="submit" value="Set">
+  </form>
+
+  <p>{% trans 'Present time zone' %} {{ TIME_ZONE }}</p>
+  <p>{% trans 'Time in current time zone' %}: {{ current_time|timezone:TIME_ZONE }}</p>
+{% endblock posts_content %}

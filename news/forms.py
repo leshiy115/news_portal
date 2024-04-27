@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User, Group, AbstractUser
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.validators import UnicodeUsernameValidator
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 from allauth.account.forms import SignupForm
 from allauth.account.adapter import DefaultAccountAdapter

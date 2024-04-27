@@ -290,3 +290,1570 @@ Traceback (most recent call last):
     return HttpResponse(string)
 NameError: name 'HttpResponse' is not defined
 2024-04-26 13:49:53,365 -- ERROR -- "GET /test/ HTTP/1.1" 500 80405 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 20:25:31,049 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '{{' from '{{'"), <traceback object at 0x000001CFE1455D80>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\templatetags\i18n.py", line 403, in do_translate
+    message_string = parser.compile_filter(bits[1])
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{{' from '{{'
+2024-04-27 20:25:31,061 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 204389 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:05:53,873 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'get_current_timezone' requires 'as variable' (got ['get_current_timezone'])"), <traceback object at 0x0000017895586F80>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\templatetags\tz.py", line 199, in get_current_timezone_tag
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'get_current_timezone' requires 'as variable' (got ['get_current_timezone'])
+2024-04-27 21:05:53,883 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 260363 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:14,774 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E1D33780>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:14,784 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:15,466 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E1F04180>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:15,472 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:16,892 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E20CE300>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:16,898 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:23,732 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E20CE700>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:23,739 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:24,251 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E20C1EC0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:24,256 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:24,741 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E20EFC40>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:24,747 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:20:26,006 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E1F05180>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.is_naive()
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:20:26,012 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232946 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:21:08,618 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E1F35D80>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.tzinfo
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:21:08,625 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232886 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:21:09,455 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'TypeError'>, TypeError("is_naive() missing 1 required positional argument: 'value'"), <traceback object at 0x000001C9E1D85140>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 17, in clock
+    timezone.tzinfo
+TypeError: is_naive() missing 1 required positional argument: 'value'
+2024-04-27 21:21:09,461 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 232886 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:45,845 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EC019C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:45,855 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:46,877 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EE03980>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:46,884 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:47,573 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EFCD0C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:47,580 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:48,317 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EFBB640>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:48,324 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:55,641 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566F0050C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:55,648 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:56,544 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EE6AA00>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:56,552 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:56,771 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EBE8C40>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:56,778 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:40:56,973 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000002566EFB8E40>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:40:56,980 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:41:07,078 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000001910F01E380>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:41:07,087 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 270055 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:49,203 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000001910EEB7580>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:49,210 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269503 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:49,787 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000001910EEFE900>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:49,823 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269503 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:50,218 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000001910EF4A6C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:50,228 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269503 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:50,862 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x000001910EF71080>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:50,869 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269503 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:56,433 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x0000018FC886C540>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:56,442 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269507 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:57,091 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x0000018FC8AC8780>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:57,109 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269507 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:57,598 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x0000018FC8B2AEC0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:57,638 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269507 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:43:57,882 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'clock' did not receive value(s) for the argument(s): 'tz'"), <traceback object at 0x0000018FC8B3F7C0>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 362, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'clock' did not receive value(s) for the argument(s): 'tz'
+2024-04-27 21:43:57,891 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 269507 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:44:13,426 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'datetime' is not defined"), <traceback object at 0x0000018FC88D2C00>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 18, in clock
+    return datetime.now(pytz.timezone(tz)).strftime("%H:%M")
+NameError: name 'datetime' is not defined
+2024-04-27 21:44:13,432 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 233236 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 21:44:20,886 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'NameError'>, NameError("name 'datetime' is not defined"), <traceback object at 0x000002B6BD7B5740>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\git\news_portal\news\templatetags\custom_tags.py", line 18, in clock
+    return datetime.now(pytz.timezone(tz)).strftime("%H:%M")
+NameError: name 'datetime' is not defined
+2024-04-27 21:44:20,894 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 233236 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
+2024-04-27 22:07:51,334 -- ERROR -- Internal Server Error: /time_zone/ -- C:\git\news_portal\venv\lib\site-packages\django\utils\log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 14: 'clock'. Did you forget to register or load this tag?"), <traceback object at 0x000001F908545740>)
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+KeyError: 'clock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\git\news_portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\git\news_portal\news\views.py", line 203, in get
+    return render(request, 'time_zone_change.html', context=context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\git\news_portal\venv\lib\site-packages\django\template\base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 14: 'clock'. Did you forget to register or load this tag?
+2024-04-27 22:07:51,344 -- ERROR -- "GET /time_zone/ HTTP/1.1" 500 271900 -- C:\git\news_portal\venv\lib\site-packages\django\core\servers\basehttp.py -- None
