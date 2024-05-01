@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
+    # DRF
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     # for timezone
     'news_portal.middlewares.TimezoneMiddleware',
+
 ]
 
 ROOT_URLCONF = 'news_portal.urls'
@@ -348,5 +351,12 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+#############
+############# REST
+REST_FRAMEWORK = {
+   'DEFAULT_PERMISSION_CLASSES': [
+       'rest_framework.permissions.IsAuthenticated',
+   ]
 }
 #############

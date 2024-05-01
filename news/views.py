@@ -30,7 +30,6 @@ class PostsList(ListView):
     context_object_name = 'posts'
     paginate_by = 10
 
-
     def get_queryset(self):
         queryset = super().get_queryset()
 
@@ -51,13 +50,11 @@ class PostsList(ListView):
 
         return queryset
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if 'search/' in self.request.path:
             context['filterset'] = self.filterset
         return context
-
 
 
 class PostDetail(LoginRequiredMixin, DetailView):
@@ -83,7 +80,6 @@ class UserDetail(LoginRequiredMixin, DetailView):
         return context
 
 
-
 def upgrade_me(request):
     """Изменение уровня доступа через профиль"""
     user = request.user
@@ -102,13 +98,11 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Post
     template_name = 'post_edit.html'
 
-
     def form_valid(self, form):
         post = form.save(commit=False)
         path = self.request.path
         if not check_user_limit(self.request.user):
             return redirect('all_posts')
-
 
         if 'news/' in path:
             post.post_type = "N"
@@ -123,7 +117,6 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
             raise Exception('Так как вы не авторизованны, вы не можете создавать посты')
         else:
             post.author = self.request.user.author
-
 
         return super().form_valid(form)
 
@@ -140,15 +133,11 @@ class PostCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
             return context
 
 
-
-
-
 class PostUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     permission_required = 'news.change_post'
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -192,8 +181,6 @@ def check_user_limit(user):
         return True
 
 
-
-
 class TimeZoneChange(View):
     def get(self, request):
         context = {
@@ -207,7 +194,25 @@ class TimeZoneChange(View):
         return redirect('time_zone')
 
 
+from rest_framework import viewsets
+from rest_framework import permissions
+
+from news.serializers import PostSerializer
+from news.models import Post
+from rest_framework.response import Response
+from rest_framework import status
 
 
+class PostViewset(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def create(self, request, *args, **kwargs):
+        request.data['author_id'] = User.objects.get(pk=request.user.pk)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 

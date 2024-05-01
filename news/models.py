@@ -72,7 +72,7 @@ class Post(models.Model):
     news = 'N'
     POSITIONS = [(article, _('Article')),
                  (news, _('News'))]
-    post_type = models.CharField(max_length=1, choices=POSITIONS, default=article)
+    post_type = models.CharField(max_length=1, choices=POSITIONS, default=article, verbose_name=_('Type'))
     # автоматически добавляемая дата и время создания;
     time_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Publication date'))
     # заголовок статьи/новости;
@@ -83,7 +83,7 @@ class Post(models.Model):
     rating = models.IntegerField(default=0, verbose_name=_('Rating'))
     # связь «один ко многим» с моделью Author;
     #!! Можно было при удалении поста авторство перетекало админу и отображалось бы как "Неизвестный автор" или имя сохранялось в отдельную модель и отражалось бы от туда. Так бы пост мог оставаться на сайте. Но думаю это нарушении авторских прав. Если стоит это провернуть напиши в ответе.
-    author = models.ForeignKey('Author', null=True, on_delete=models.CASCADE)
+    author = models.ForeignKey('Author', on_delete=models.CASCADE)
     # связь «многие ко многим» с моделью Category (с дополнительной моделью PostCategory);
     category = models.ManyToManyField('Category', through='PostCategory', verbose_name=_('Categories'))
 
